@@ -1,0 +1,628 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="UTF-8">
+<meta name="viewport"
+	content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>进京证在线申领</title>
+<link rel="stylesheet" href="//enterbj.zhongchebaolian.com/enterbj/static_resources/enterbj/css/base.css" />
+<link rel="stylesheet" href="//enterbj.zhongchebaolian.com/enterbj/static_resources/enterbj/css/jjz.css" />
+<script src="//enterbj.zhongchebaolian.com/enterbj/static_resources/enterbj/js/jquery-1.11.1.min.js"></script>
+<script src="//enterbj.zhongchebaolian.com/enterbj/static_resources/enterbj/js/move.js"></script>
+
+  </head>
+  
+  <body>
+<!--    <div class="header"> -->
+<!--     <a href="addcar_s.html" class="arrow"></a> -->
+<!--     进京证在线申领 -->
+<!-- </div> -->
+<div class="choose c100">
+    <h2>
+        申请进京车辆:
+        <span>冀J66E73</span>
+    </h2>
+</div>
+<div class="choose">
+    <h2>进京信息</h2>
+    <ul class="car">
+        <li class="jinjingriqili">
+            <span class="mei">进京日期</span>
+            <i class="c9" id="intertime">请选择进京日期</i>
+            <a href="javascript:;" class="tp ll">▲</a>
+        </li>
+        <li class="jinjingshichangli">
+            <span class="mei">进京时长</span>
+            <i class="c9 ddd" id="interhowlong">请选择进京时长</i>
+            <a href="javascript:;" class="tp date">▲</a>
+        </li>
+        <li class="nof">
+            <span class="mei">进京路口</span>
+            <i class="c9 arei selectare" id="interwhere" style="width:32%;">请选进京区县</i>
+            <a href="javascript:;" class="tp selectare">▲</a>
+            <i class="c9 pathi selectpath" id="selectpathi">请选进京道路</i>
+            <a href="javascript:;" class="tp selectpath">▲</a>
+        </li>
+    </ul>
+
+</div>
+<!-- 申请信息提交表单 -->
+<form action="//enterbj.zhongchebaolian.com/enterbj/platform/enterbj/submitpaper" id="applyenterform" method="post" class="applyenterformchoose">
+<input name="appsource" id="appsource" value="bjjj" type="hidden"/>
+<input id="hiddentime" name="hiddentime" type="hidden" value="2019-01-12 11:40:17">
+<input name="inbjentrancecode1" id="inbjentrancecode1" type="hidden" placeholder="">
+<input name="inbjentrancecode" id="inbjentrancecode" type="hidden" placeholder="">
+<input name="inbjduration" id="inbjduration" type="hidden" placeholder="">
+<input name="inbjtime" id="inbjtime" type="hidden" placeholder="">
+<!-- <input name="papardto" value="" type="hidden"> -->
+<input name="appkey" id="appkey" type="hidden" placeholder="" value="">
+<input name="deviceid" id="deviceid" type="hidden" placeholder="" value="">
+<input name="token" id="token" type="hidden" placeholder="" value="">
+<input name="timestamp" id="timestamp" type="hidden" placeholder="" value="">
+<input name="userid" id="userid" type="hidden" placeholder="" value="FAC9DEBBD14F4EA3A884F3C61DE50660">
+<input name="licenseno" id="licenseno" type="hidden" placeholder="" value="冀J2H8L7">
+<input name="engineno" id="engineno" type="hidden" placeholder="" value="U91387">
+<input name="cartypecode" id="cartypecode" type="hidden" placeholder="" value="02">
+<input name="vehicletype" id="vehicletype" type="hidden" placeholder="" value="03">
+<input name="drivingphoto" id="drivingphoto" type="hidden" placeholder="" value="">
+<input name="carphoto" id="carphoto" type="hidden" placeholder="" value="">
+<input name="drivername" id="drivernamew" type="hidden" placeholder="" value="王东晓">
+<input name="driverlicenseno" id="driverlicensenow" type="hidden" placeholder="" value="130983199010085512">
+<input name="driverphoto" id="driverphoto" type="hidden" placeholder="" value="">
+<input name="personphoto" id="personphoto" type="hidden" placeholder="" value="">
+<input name="gpslon" id="gpslon" type="hidden" placeholder="" value="116.511744">
+<input name="gpslat" id="gpslat" type="hidden" placeholder="" value="39.993636">
+<input name="phoneno" id="phoneno" type="hidden" placeholder="" value="">
+<input name="imei" id="imei" type="hidden" placeholder="" value="e83748b4-1eff-328d-8499-7ae29740b0f7">
+<input name="imsi" id="imsi" type="hidden" placeholder="" value="">
+<input name="carid" id="carid" type="hidden" placeholder="" value="19336911">
+<input name="carmodel" id="carmodel" type="hidden" placeholder="" value="FV7164LABBG">
+<input name="carregtime" id="carregtime" type="hidden" placeholder="" value="2017-11-15">
+<input name="envGrade" id="envGrade" type="hidden" placeholder="" value="3">
+<input name="imageId" id="imageId" type="hidden" />
+<!-- 验证码 -->
+<input  type="hidden"  name="code" id="code" />
+<!-- cookieval -->
+<input  type="hidden"  name="sign" id="sign" />
+<input type="hidden" name="platform" id="platform" />
+<div class="choose">
+    <h2>进京同行人信息
+    <!-- <span class="red" style="font-size:0.24rem;">（请选择历史同行驾驶员）</span> -->
+    </h2>
+    <ul class="car">
+    	
+        
+        <li class="jiashi">
+            添加驾驶员
+            <a href="#" class="add"></a>
+        </li>
+    </ul>
+</div>
+</form>
+<a href="javascript:;" class="lastbtn nop" style="margin-top:0.6rem;">提交</a>
+<div id="tanwindow3" style=" position: relative;"></div>
+<!--驾驶员信息-->
+<div class="choose jia none" style="z-index: 1001">
+<form action="" id="driverinfo" >
+<input type="hidden" name="userid" value="FAC9DEBBD14F4EA3A884F3C61DE50660" placeholder="">
+<input type="hidden" name="appkey" value="2c4f118799324d7ab4f70513989f667f" placeholder="">
+<input type="hidden" name="deviceid" value="2c4f118799324d7ab4f70513989f667f" placeholder="">
+<input type="hidden" name="token" value="2c4f118799324d7ab4f70513989f667f" placeholder="">
+<input type="hidden" name="timestamp" value="timestamp" placeholder="">
+<input name="appsource" value="bjjj" type="hidden"/>
+    <ul class="car">
+        <li class="tt">
+            <span class="blue off">取消</span>
+            <span class="blue state">请输入驾驶员信息</span>
+            <span class="blue right">确定</span>
+        </li>
+        <li>
+            <span class="mei">驾驶员姓名</span>
+            <input type="text" placeholder="请输入驾驶员姓名" name="drivername" id="drivername" class="num nnn"/>
+        </li>
+        <li>
+            <span class="mei">驾驶证号</span>
+            <input type="text" placeholder="请输入驾驶证号" name="driverlicenseno" id="driverlicenseno" class="num nn"/>
+        </li>
+        <li>
+            <span class="mei nmei">手机号码</span>
+            <input type="text" placeholder="请输入手机号码" name="phoneno" id="phoneno" class="num nn"/>
+        </li>
+    </ul>
+</form>
+</div>
+<div class="blackDivv none">
+<!-- 进京日期 -->
+<div  class="rili">
+
+<table width="100%" cellpadding="0" cellspacing="0" height="28%"><tr><td class="font blue yearnumberandmonthnumber" align="center">2019年3月</td><td class="font blue" align="center">请选择进京时间</td></tr></table><table width="100%" cellpadding="0" cellspacing="0"><tr><td class="font" align="center"><font color="blue">六</font></td><td class="font" align="center"><font color="blue">日</font></td><td class="font" align="center"><font color="blue">一</font></td><td class="font" align="center"><font color="blue">二</font></td><td class="font" align="center"><font color="blue">三</font></td><td class="font" align="center"><font color="blue">四</font></td><td class="font" align="center"><font color="blue">五</font></td></tr><tr><td class="font datanumber" align="center" ><font color="blue" data="2019-3-3">3</font></td><td class="font datanumber" align="center" ><font color="blue" data="2018-4-15">15</font></td><td class="font datanumber" align="center" ><font color="blue" data="2018-4-16">16</font></td><td class="font datanumber" align="center" ><font color="blue" data="2018-4-17">17</font></td><td class="font datanumber" align="center" ><font color="gray">18</font></td><td class="font datanumber" align="center" ><font color="gray">19</font></td><td class="font datanumber" align="center" ><font color="gray">20</font></td></tr><tr><td class="font datanumber" align="center" ><font color="gray">21</font></td><td class="font datanumber" align="center" ><font color="gray">22</font></td><td class="font datanumber" align="center" ><font color="gray">23</font></td><td class="font datanumber" align="center" ><font color="gray">24</font></td><td class="font datanumber" align="center" ><font color="gray">25</font></td><td class="font datanumber" align="center" ><font color="gray">26</font></td><td class="font datanumber" align="center" ><font color="gray">27</font></td></tr></table></table>
+</div>
+<div style="height: 200px;"></div>
+<!--进京时长-->
+<div class="riqi none dateul">
+    <h3 >请选择进京时长</h3>
+    <ul >
+    
+    <li data="7">7天</li>
+    
+    
+    <li>@@@@@@@@@@</li>
+    
+    </ul>
+</div>
+<!-- 进京地区 -->
+<div class="riqi none areul">
+	<h3>请选择进京地区</h3>
+	<ul>	
+		
+		<li data="05">朝阳</li>
+		
+		<li data="09">房山</li>
+		
+		<li data="12">通州</li>
+		
+		<li data="16">昌平</li>
+		
+		<li data="11">大兴</li>
+		
+		<li data="13">顺义</li>
+		
+		<li data="14">平谷</li>
+		
+		<li data="15">怀柔</li>
+		
+		<li data="17">密云</li>
+		
+		<li data="18">延庆</li>
+		
+		
+		<li>@@@@@@@@@@</li>
+		
+	</ul>
+</div>
+<!-- 进京路口 -->
+
+<div class="riqi none rukouul" id="are05">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="19">京沪高速</li>
+
+<li data="12">京哈高速</li>
+
+<li data="74">其他道路</li>
+
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are09">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="03">京港澳高速</li>
+
+<li data="14">107国道</li>
+
+<li data="16">房易路</li>
+
+<li data="42">京昆高速</li>
+
+<li data="43">108国道</li>
+
+<li data="44">周张路</li>
+
+<li data="45">长韩路</li>
+
+<li data="46">紫码路</li>
+
+<li data="47">长琉路</li>
+
+<li data="78">其他道路</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are12">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="24">京津高速</li>
+
+<li data="04">通燕高速</li>
+
+<li data="02">103国道</li>
+
+<li data="48">通香路</li>
+
+<li data="49">漷小路</li>
+
+<li data="53">京榆旧路</li>
+
+<li data="50">武兴路</li>
+
+<li data="51">孔兴路</li>
+
+<li data="52">永觅路</li>
+
+<li data="81">其他道路</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are16">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="13">京藏高速</li>
+
+<li data="54">高芹路</li>
+
+<li data="85">其他道路</li>
+
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are11">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="56">中轴路</li>
+
+<li data="57">大礼路</li>
+
+<li data="06">104国道</li>
+
+<li data="58">采万路</li>
+
+<li data="05">106国道</li>
+
+<li data="59">南十路</li>
+
+<li data="26">大广高速</li>
+
+<li data="60">黄徐路</li>
+
+<li data="80">其他道路</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are13">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="61">木燕路</li>
+
+<li data="62">木北路</li>
+
+<li data="63">七大路</li>
+
+<li data="20">杨燕路</li>
+
+<li data="21">焦孙路</li>
+
+<li data="82">其他道路</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are14">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="22">密三路</li>
+
+<li data="25">平三路</li>
+
+<li data="11">平蓟路</li>
+
+<li data="23">东南路</li>
+
+<li data="27">京平高速</li>
+
+<li data="83">其他道路</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are15">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="10">京加路</li>
+
+<li data="64">滦赤路</li>
+
+<li data="84">其他道路</li>
+
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are17">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="65">西火路</li>
+
+<li data="66">101国道</li>
+
+<li data="67">松曹路</li>
+
+<li data="29">密兴路</li>
+
+<li data="28">京承高速</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+<div class="riqi none rukouul" id="are18">
+<h3 >请选择进京地区</h3>
+<ul>
+
+<li data="07">101国道</li>
+
+<li data="17">京藏高速</li>
+
+<li data="18">滦赤路</li>
+
+<li data="68">京新高速</li>
+
+<li data="69">松阎路</li>
+
+<li data="70">351工厂路</li>
+
+<li data="71">滦赤路</li>
+
+<li data="87">其他道路</li>
+
+
+<li>@@@@@@@@@@</li>
+
+</ul>
+</div>
+
+
+<span id="gritter-regist"></span>
+<span hidden="true" id="write-info"></span>
+</div>
+<div id="tanwindow2" ></div>
+
+<!-- 	loading -->
+<div class="blac none">
+	<img src="//enterbj.zhongchebaolian.com/enterbj/static_resources/enterbj/images/loading.gif" alt="" />
+</div>
+
+<div class="blank none">
+    <div class="wbox">
+        <p>请确认申请信息</p>
+        <p>申请机动车：<span>冀J66E73</span></p>
+        <p>进京日期：<span id="inbjdate"></span></p>
+        <p>进京时长：<span id="inbjdays"></span>天</p>
+        <p class="notice red">注意:申请一旦提交成功后,不能修改,不能撤销。</p>
+        
+        <div class="verifyf">
+            <a href="javascript:; " class="verifyfreturn">返回修改</a>
+            <a href="javascript:;" class="blue verifyconfirm">确认提交</a>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    $('.lastbtn').click(function() {
+    
+    	if(validparam())
+    	{
+    		/* 生成校验码 */
+    		getCaptcha();
+	       	$('.blank').removeClass('none');
+	       	var sourcedate = $.trim($('#inbjtime').val());
+	       	var sourcedates = sourcedate.split("-");
+	       	var newdate = "";
+	       	newdate += sourcedates[0];
+	       	newdate += "年";
+	       	newdate += sourcedates[1];
+	       	newdate += "月";
+	       	newdate += sourcedates[2];
+	       	newdate += "日";
+	       	$('#inbjdate').html(newdate);
+	       	$('#inbjdays').html($.trim($('#inbjduration').val()));
+       	}
+    });
+    //start  点击第二次时按钮失效
+    var count=0;
+    if(count==0){
+    	$('.verifyfreturn').click(function(){
+	        $('.blank').addClass('none');
+	        count=1;
+	    });    
+    }else{
+    	$('.verifyfreturn').click(function(){
+	        return false;
+	    });
+    }
+    //end
+    $('.verifyfreturn').click(function(){
+        $('.blank').addClass('none');
+    })
+  $('.verifyconfirm').click(function(){
+    	/* 检查验证码 */
+    	
+        submitapply();
+    }) 
+</script>
+</html>
+<script type="text/javascript">
+	var u = navigator.userAgent;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android??
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios??
+
+	function validparam(){
+		var inbjtimeId = $.trim($('#inbjtime').val());
+		var inbjdurationId = $.trim($('#inbjduration').val());
+		var inbjentrancecodeId = $.trim($('#inbjentrancecode').val());
+		var inbjentrancecode1Id = $.trim($('#inbjentrancecode1').val());
+		
+		if(inbjtimeId ==""){
+			//$('#intertime').val('').attr("placeholder","请选择进京时间!").css({"border-color": "#ff0000","background-color":"#ffff00"});
+			var tanwindowstr = "<div class='tan'>请选择进京日期！</div>";
+			$("#tanwindow2").append(tanwindowstr);
+			return false;
+		}
+		if(inbjdurationId ==""){
+			//$('#interhowlong').val('').attr("placeholder","请选择进京时长!").css({"border-color": "#ff0000","background-color":"#ffff00"});
+			var tanwindowstr = "<div class='tan'>请选择进京时长！</div>";
+			$("#tanwindow2").append(tanwindowstr);
+			return false;
+		}
+		if(inbjentrancecodeId ==""){
+			//$('#interhowlong').val('').attr("placeholder","请选择进京时长!").css({"border-color": "#ff0000","background-color":"#ffff00"});
+			var tanwindowstr = "<div class='tan'>请选择进京路口！</div>";
+			$("#tanwindow2").append(tanwindowstr);
+			return false;
+		}
+		if(inbjentrancecode1Id ==""){
+			//$('#interhowlong').val('').attr("placeholder","请选择进京时长!").css({"border-color": "#ff0000","background-color":"#ffff00"});
+			var tanwindowstr = "<div class='tan'>请选择进京路口！</div>";
+			$("#tanwindow2").append(tanwindowstr);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	function submitapply(){
+		validparam();
+		$("#applyenterformchoose input").blur();
+		openloading()
+		//alert('s')
+		var appsource = $('#appsource').val();
+		
+	    // 向app传秘钥
+	    // var cookieval = getCookie("enterbj_sign_session_id"); 上一次验签使用
+	    try {
+	    	bridgewai.callHandler('isLogin', '', function(response) {
+	    		 if(response!= null && response != undefined){
+	    			var mycurtime = new Date().Format("yyyy-MM-dd hh:mm:ss");
+	    			$('#hiddentime').val(mycurtime);
+	    			 /* 加签 */
+	    			var timestamp = new Date().Format("yyyy-MM-dd hh:mm:ss");
+	    			var imageId = $("#inbjentrancecode").val()+$("#inbjduration").val()+$("#inbjtime").val()+$("#userid").val()+$("#engineno").val()+$("#cartypecode").val()+$("#driverlicensenow").val()+$("#carid").val()+timestamp;
+	    			$('#imageId').val(imageId);
+			    	var platform = "02"; // Android
+			    	if(isiOS){
+			    		platform = "01"; // IOS
+			    	}
+			    	var version = response.version;
+			    	var isSign = false;
+			    	if ((platform == "02" && version >= '2.2.1') || (platform == "01" && version >= 'version:2.2.1')) {
+			    		isSign = true;
+			    	}
+			    	if (appsource == 'jjzx') {
+			    		submitForm(appsource);
+			    	} else {
+			    		if (isSign) {
+			    			var deviceid = response.deviceid;
+			    			var yz = response.appkey;
+						    bridgewai.callHandler('zcbl_h5', {'imageId':yz+imageId+yz}, function(response) {
+						    	if (response.rescode != "2xx") {
+						    		//alert('response.imageString' + response.imageString);
+						    		var sign = response.imageString;
+					    			$('#sign').val(sign);
+					    			$('#timestamp').val(timestamp);
+					    			$('#platform').val(platform);
+					    			$('#deviceid').val(deviceid);
+					    			submitForm(appsource);
+						    	} else {
+						    		var tanwindowstr = "<div class='tan'>加载失败，请稍后重试！</div>";
+									$("#tanwindow2").append(tanwindowstr);
+						    	}
+						    });
+				    	} else {
+				    		var tanwindowstr = "<div class='tan'>APP版本过低，请下载最新版本！</div>";
+							$("#tanwindow2").append(tanwindowstr);
+				    	}
+			    	}
+	    		 }
+	 	    });
+	    } catch(e) {
+	    	closeloading();
+			var tanwindowstr = "<div class='tan'>加载失败，请稍后重试！</div>";
+			$("#tanwindow2").append(tanwindowstr);
+			// 刷新验证码
+			getCaptcha();
+	    }
+// 		$('#applyenterform').submit();
+	}
+	
+	function submitForm(appsource) {
+		var vehicletype = $("#vehicletype").val();
+		$.ajax({
+			type:"post",
+			url:"//enterbj.zhongchebaolian.com/enterbj-img/platform/enterbj/submitpaper_" + vehicletype,
+			data:$('#applyenterform').serialize(),
+			dataType:"json",
+			success:function(msg){
+				if(msg.rescode==200){
+					window.location.href="//enterbj.zhongchebaolian.com/enterbj/jsp/enterbj/win.jsp?appsource="+appsource;
+					$('.blank').addClass('none');
+				}else{
+					closeloading()
+					var tanwindowstr = "<div class='tan'>"+msg.resdes+"</div>";
+					$("#tanwindow2").append(tanwindowstr);
+					// 刷新验证码
+					getCaptcha();
+					setTimeout(function(){
+						submitapply();
+					},60000);
+				}
+			},
+			timeout: 60000,
+			error:function(msg){
+				closeloading()
+				var tanwindowstr = "<div class='tan'>提交失败，请稍后重试</div>";
+				$("#tanwindow2").append(tanwindowstr);
+				// 刷新验证码
+				getCaptcha();
+				setTimeout(function(){
+					submitapply();
+				},60000);
+	        }
+		});
+	}
+	
+	/* 生成校验码 */
+	function getCaptcha() {
+		// var url = "//enterbj.zhongchebaolian.com/enterbj/platform/enterbj/getCaptcha?" + Math.random();
+		// $("#captchaImg").attr('src',url);
+		// $("#captcha").val("");
+	}
+</script>
